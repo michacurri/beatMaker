@@ -40,7 +40,7 @@ $(function () {
       const dataKey = e.currentTarget.attributes["data-key"]
       const audio = $(`audio[data-key="${dataKey.nodeValue}"]`);
       if (!audio) return;
-      audio.currentTime = 0;
+      audio.get(0).currentTime = 0; 
       audio.get(0).play();
     })
 
@@ -48,11 +48,8 @@ $(function () {
       const keyCode = e.originalEvent.keyCode;
       const audio = $(`audio[data-key="${keyCode}"]`);
       if (!audio) return;
-      audio.currentTime = 0;
+      audio.get(0).currentTime = 0;
       audio.get(0).play();
     })
-
-
-
 
 })
