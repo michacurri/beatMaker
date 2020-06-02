@@ -17,17 +17,42 @@
 // the MediaRecorder API may be used in this feature and information stored in an object array using separate variables. 
 // Set Timeout, Set Interval API's may be used to store timing information.
 
-$(function () {
-  // console.log("load me up");
-  $('.pad').on('click', function (e) {
 
-    console.log( "Handler for .keydown() called." );
-    // const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const audio = (`audio[data-key="${e.keyCode}"]`);
-    // console.log(audio)
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.play();
-  });
+
+  // console.log("load me up");
+  // window.addEventListener('keydown', function(e) {
+  //   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  //   console.log(audio);
+  //   if (!audio) return;
+  //   audio.currentTime = 0;
+  //   audio.play();
+  // });
+
+
+
+//// my code
+
+
+
+$(function () {
+
+    $('.pad').on('click', function (e) {
+      const dataKey = e.currentTarget.attributes["data-key"]
+      const audio = $(`audio[data-key="${dataKey.nodeValue}"]`);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.get(0).play();
+    })
+
+    $('body').on('keydown', function(e) {
+      const keyCode = e.originalEvent.keyCode;
+      const audio = $(`audio[data-key="${keyCode}"]`);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.get(0).play();
+    })
+
+
+
 
 })
