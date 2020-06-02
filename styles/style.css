@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.beatGrid {
+  margin: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+}
+
+.pad {
+  height: 15rem;
+  width: 15rem;
+  background-color: black;
+  border-radius: 5%;
+}
+
+.pad:active {
+  background-color: gray;
+}
