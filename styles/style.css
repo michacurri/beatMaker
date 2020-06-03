@@ -239,15 +239,41 @@ html {
   font-size: 62.5%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.machine {
+  border: black 3px solid;
+  border-radius: 2% 2%;
+  padding: 2%;
+}
+
 .beatGrid {
-  margin: 50px;
+  padding: 5%;
+  border-radius: 1%;
   display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  background: #303030;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: (1fr)[2];
@@ -257,13 +283,22 @@ html {
 }
 
 .pad {
-  height: 15rem;
-  width: 15rem;
-  background-color: black;
+  height: 20rem;
+  width: 20rem;
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
   border-radius: 5%;
   list-style: none;
+  -webkit-box-shadow: 0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
+          box-shadow: 0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
 }
 
-.pad:active {
-  background-color: gray;
+.pad:active,
+.pad:target {
+  -webkit-box-shadow: 0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
+          box-shadow: 0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
+  background: #f60808;
+  background: radial-gradient(circle, #f60808 0%, #b594e9 100%);
 }

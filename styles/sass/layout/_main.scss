@@ -3,24 +3,45 @@
   margin: 0 auto;
 }
 
+
+.machine {
+  border: black 3px solid;
+  border-radius: 2% 2%;
+  padding: 2%;
+}
+
+
 .beatGrid {
-  margin: 50px;
+  padding: 5%;
+  border-radius: 1%;
   display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #303030;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
-  } 
+}
 
-  .pad {
-    height: 15rem;
-    width: 15rem;
-    background-color: black;
-    border-radius: 5%;
-    list-style: none;
-  }
+.pad {
+  height: 20rem;
+  width: 20rem;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  border-radius: 5%;
+  list-style: none;
+  box-shadow: (0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black);
 
-  .pad:active {
-    background-color: gray;
-  }
+  transition: all 100ms;
+}
 
+
+.pad:active,
+.pad:target {
+  box-shadow: (0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black);
+  // inner shadow idea from: https://codepen.io/wallas/pen/lFABr
+  // transform: (0.9);
+  background: rgb(246, 8, 8);
+  background: radial-gradient(circle, rgba(246, 8, 8, 1) 0%, rgba(181, 148, 233, 1) 100%); // transform: scale(1.1);
+}
