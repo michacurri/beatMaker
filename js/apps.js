@@ -19,58 +19,40 @@
 
 
 
-  // console.log("load me up");
-  // window.addEventListener('keydown', function(e) {
-  //   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  //   console.log(audio);
-  //   if (!audio) return;
-  //   audio.currentTime = 0;
-  //   audio.play();
-  // });
-
-
-
 //// my code
 
+
+const pads = $('.pad');
 
 
 $(function () {
 
-    $('.pad').on('click', function (e) {
-      const dataKey = e.currentTarget.attributes["data-key"]
-      const audio = $(`audio[data-key="${dataKey.nodeValue}"]`);
-      const pad = $(`.pad[data-key="${dataKey.nodeValue}"]`);
-      if (!audio) return;
-      audio.get(0).currentTime = 0; 
-      audio.get(0).play();
-      
-    })
-// original
-    // $('body').on('keydown', function(e) {
-    //   const keyCode = e.originalEvent.keyCode;
-    //   const audio = $(`audio[data-key="${keyCode}"]`);
-    //   const pad = $(`.pad[data-key="${keyCode}"]`);
-    //   if (!audio) return;
-    //   audio.get(0).currentTime = 0;
-    //   audio.get(0).play();
-    //   console.log(pad);
-    // })
+  // on click (mobile or mouse experience)
+  $('.pad').on('click', function (e) {
+    const dataKey = e.currentTarget.attributes["data-key"]
+    const audio = $(`audio[data-key="${dataKey.nodeValue}"]`);
+    const pad = $(`.pad[data-key="${dataKey.nodeValue}"]`);
+    if (!audio) return;
+    audio.get(0).currentTime = 0;
+    audio.get(0).play();
+    pad.addClass('padActive');
 
-// test
-    $('body').on('keydown', function(e) {
-      const keyCode = e.which;
-      const audio = $(`audio[data-key="${keyCode}"]`);
-      const pad = $(`.pad[data-key="${keyCode}"]`);
-      if (!audio) return;
-      audio.get(0).currentTime = 0;
-      audio.get(0).play();
-      pad.add('padActive');
-      console.log(pad);
-    })
+  })
 
+  // on keydown (desktop with keyboard experience)
+  $('body').on('keydown', function (e) {
+    const keyCode = e.which;
+    const audio = $(`audio[data-key="${keyCode}"]`);
+    const pad = $(`.pad[data-key="${keyCode}"]`);
+    if (!audio) return;
+    audio.get(0).currentTime = 0;
+    audio.get(0).play();
+    pad.addClass('padActive');
+  })
 
-    // const pads = $('.pad');
-    // pads.forEach(pad => padActive.end(){
-
-    // })
+$.each(pads, (index, pad) => {
+    $(pad).on('transitionend', function(){
+      $(pad).removeClass('padActive');
+    } )
+  })
 })
