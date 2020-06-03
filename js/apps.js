@@ -64,7 +64,13 @@ $(function () {
       if (!audio) return;
       audio.get(0).currentTime = 0;
       audio.get(0).play();
+      pad.add('padActive');
       console.log(pad);
     })
 
+
+    // const pads = $('.pad');
+    // pads.forEach(pad => padActive.end(){
+
+    // })
 })
