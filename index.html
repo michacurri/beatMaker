@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeatMaker</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
   <main>
     <div class="wrapper">
-      <ul class="beatGrid">
-        <li data-key="69" class="pad"></li>
-        <li data-key="82" class="pad"></li>
-        <li data-key="85" class="pad"></li>
-        <li data-key="73" class="pad"></li>
-        <li data-key="68" class="pad"></li>
-        <li data-key="70" class="pad"></li>
-        <li data-key="74" class="pad"></li>
-        <li data-key="75" class="pad"></li>
-      </ul>
+      <div class="machine">
+        <ul class="beatGrid">
+          <li data-key="69" class="pad"></li>
+          <li data-key="82" class="pad"></li>
+          <li data-key="85" class="pad"></li>
+          <li data-key="73" class="pad"></li>
+          <li data-key="68" class="pad"></li>
+          <li data-key="70" class="pad"></li>
+          <li data-key="74" class="pad"></li>
+          <li data-key="75" class="pad"></li>
+        </ul>
+      </div>
     </div>
   </main>
   <div class="files">
-    <audio data-key="69" src="./assets/sounds/windows-sounds/Windows Hardware Fail.wav"></audio>
-    <audio data-key="82" src="./assets/sounds/windows-sounds/Windows Balloon.wav"></audio>
-    <audio data-key="85" src="./assets/sounds/windows-sounds/Windows Battery Low.wav"></audio>
-    <audio data-key="73" src="./assets/sounds/windows-sounds/Windows Default.wav"></audio>
-    <audio data-key="68" src="./assets/sounds/windows-sounds/Windows Hardware Insert.wav"></audio>
-    <audio data-key="70" src="./assets/sounds/windows-sounds/Windows Error.wav"></audio>
-    <audio data-key="74" src="./assets/sounds/windows-sounds/Windows Exclamation.wav"></audio>
-    <audio data-key="75" src="./assets/sounds/windows-sounds/Windows Feed Discovered.wav"></audio>
+    <audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio>
+    <audio id="r" data-key="82" src="./assets/sounds/808/808-hi-hat-13.wav"></audio>
+    <audio id="u" data-key="85" src="./assets/sounds/808/808-hi-hat-fatTape-closed.wav"></audio>
+    <audio id="i" data-key="73" src="./assets/sounds/808/808-snare-2.wav"></audio>
+    <audio id="d" data-key="68" src="./assets/sounds/808/808-kick-1.wav"></audio>
+    <audio id="f" data-key="70" src="./assets/sounds/808/808-kick-2.wav"></audio>
+    <audio id="j" data-key="74" src="./assets/sounds/808/808-pitched-c-04.wav"></audio>
+    <audio id="k" data-key="75" src="./assets/sounds/808/808-snare-1.wav"></audio>
   </div>
 
 
 
-  <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+  <script src='https://code.jquery.com/jquery-3.4.0.min.js'
+    integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
   <script src="./js/apps.js"></script>
 </body>
+
 </html>
