@@ -30,11 +30,11 @@ const pads = $('.pad');
 
 // record each keydown and put the keyCode into userRecord Array
 // record time of each keydown with event.timeStamp
-const timeStamp = event.timeStamp;
-userRecord.push({
-  keyCode,
-  timeStamp
-});
+// const timeStamp = event.timeStamp;
+// userRecord.push({
+//   keyCode,
+//   timeStamp
+// });
 
 // find the time difference between
 
@@ -61,7 +61,7 @@ function addClass(pad) {
   pad.addClass('padActive');
 };
 
-function removeClass() {
+function removeClass(pad) {
   $.each(pads, (index, pad) => {
     $(pad).on('transitionend', function () {
       $(pad).removeClass('padActive');
@@ -77,29 +77,6 @@ function init() {
   $('.pad').on('click', function (e) {
     clickFunction(e);
     console.log();
-
-
-    $('.pad').on('click', function (e) {
-      const dataKey = e.currentTarget.attributes["data-key"]
-      const audio = $(`audio[data-key="${dataKey.nodeValue}"]`);
-      const pad = $(`.pad[data-key="${dataKey.nodeValue}"]`);
-      if (!audio) return;
-      audio.get(0).currentTime = 0; 
-      audio.get(0).play();
-      
-    })
-
-    $('body').on('keydown', function(e) {
-      const keyCode = e.which;
-      const audio = $(`audio[data-key="${keyCode}"]`);
-      const pad = $(`.pad[data-key="${keyCode}"]`);
-      if (!audio) return;
-      audio.get(0).currentTime = 0;
-      audio.get(0).play();
-      pad.add('padActive');
-      console.log(pad);
-    })
-
 
   })
 
@@ -118,12 +95,6 @@ function init() {
 }
 
 
-
-
-
-
-
 $(function () {
 init();
-
 })
