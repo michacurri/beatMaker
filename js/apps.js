@@ -30,6 +30,7 @@ const pads = $('.pad');
 
 // record each keydown and put the keyCode into userRecord Array
 // record time of each keydown with event.timeStamp
+
 // const timeStamp = event.timeStamp;
 // userRecord.push({
 //   keyCode,
