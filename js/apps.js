@@ -23,7 +23,7 @@
 
 
 const pads = $('.pad');
-
+const userRecord = [];
 
 $(function () {
 
@@ -41,18 +41,43 @@ $(function () {
 
   // on keydown (desktop with keyboard experience)
   $('body').on('keydown', function (e) {
+    // $('body').keydown(function (e) {
+    //which key has been hit
     const keyCode = e.which;
+    //find the corresponding audio file and link it with the pad 
     const audio = $(`audio[data-key="${keyCode}"]`);
     const pad = $(`.pad[data-key="${keyCode}"]`);
+    //if no audio file attached to keyCode return false
     if (!audio) return;
+    //reset back to 0 on every keystroke, even if sound playing
     audio.get(0).currentTime = 0;
+    //play sound
     audio.get(0).play();
+    //add CSS transition
     pad.addClass('padActive');
+    // take each keydown and put the keyCode into userRecord Array
+    // find the time difference between each keydown with event.timeStamp
+
+    const timeStamp = event.timeStamp;
+
+
+    userRecord.push({
+      keyCode,
+      timeStamp
+    });
+
   })
 
-$.each(pads, (index, pad) => {
-    $(pad).on('transitionend', function(){
+
+  // remove active transition 
+  $.each(pads, (index, pad) => {
+    $(pad).on('transitionend', function () {
       $(pad).removeClass('padActive');
-    } )
+    })
   })
+
+
+
+
+
 })
