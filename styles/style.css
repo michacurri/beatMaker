@@ -253,20 +253,65 @@ a {
   padding: 0;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.alignCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.centerCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .machine {
-  border: black 3px solid;
-  border-radius: 2% 2%;
+  border: solid black 2px;
+  border-radius: 10px 10px;
+  margin: 5vw;
   padding: 2%;
 }
 
-.beatGrid {
+.machine .controlPanel {
+  height: 20rem;
+  width: 100%;
+  background-color: darkslategrey;
+  border-radius: 10px 10px 0 0;
+}
+
+.machine .powerSwitch {
+  padding: 1rem;
+  margin-left: 5rem;
+  height: 10rem;
+  width: 10rem;
+  border: 1px solid #00d9ff;
+  background-color: black;
+  color: #00d9ff;
+  font-size: 2rem;
+}
+
+.machine .beatGrid {
   padding: 5%;
-  border-radius: 1%;
+  border-radius: 0 0 10px 10px;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -282,8 +327,10 @@ a {
   grid-row-gap: 3rem;
 }
 
-.pad::before {
-  background: white;
+@media only screen and (min-width: 769px) {
+  .machine .beatGrid {
+    padding: 3%;
+  }
 }
 
 .pad {
