@@ -19,22 +19,65 @@
 
 
 
-  // console.log("load me up");
-  // window.addEventListener('keydown', function(e) {
-  //   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  //   console.log(audio);
-  //   if (!audio) return;
-  //   audio.currentTime = 0;
-  //   audio.play();
-  // });
-
-
-
 //// my code
 
+// global variables
+
+const userRecord = [];
+const pads = $('.pad');
+
+///////////// do not delete
+
+// record each keydown and put the keyCode into userRecord Array
+// record time of each keydown with event.timeStamp
+const timeStamp = event.timeStamp;
+userRecord.push({
+  keyCode,
+  timeStamp
+});
+
+// find the time difference between
+
+////////////////// do not delete
 
 
-$(function () {
+// FUNCTIONS
+function clickFunction(e) {
+  const dataKey = e.currentTarget.attributes["data-key"];
+  const clickAudio = $(`audio[data-key="${dataKey.nodeValue}"]`);
+  const clickPad = $(`.pad[data-key="${dataKey.nodeValue}"]`);
+  playAudio(clickAudio);
+  addClass(clickPad);
+  removeClass(clickPad);
+};
+
+function playAudio(audio) {
+  if (!audio) return;
+  audio.get(0).currentTime = 0;
+  audio.get(0).play();
+};
+
+function addClass(pad) {
+  pad.addClass('padActive');
+};
+
+function removeClass() {
+  $.each(pads, (index, pad) => {
+    $(pad).on('transitionend', function () {
+      $(pad).removeClass('padActive');
+    });
+  });
+};
+
+
+// INITIALIZE
+function init() {
+
+  // on click (mobile or mouse experience)
+  $('.pad').on('click', function (e) {
+    clickFunction(e);
+    console.log();
+
 
     $('.pad').on('click', function (e) {
       const dataKey = e.currentTarget.attributes["data-key"]
@@ -56,5 +99,31 @@ $(function () {
       pad.add('padActive');
       console.log(pad);
     })
+
+
+  })
+
+  $('body').on('keydown', function (e) {
+    //which key has been hit
+    const keyCode = e.which;
+    //find the corresponding audio file and link it with the pad 
+    const audio = $(`audio[data-key="${keyCode}"]`);
+    const pad = $(`.pad[data-key="${keyCode}"]`);
+    //if no audio file attached to keyCode return false
+    playAudio(audio);
+    addClass(pad);
+    removeClass(pad);
+  })
+
+}
+
+
+
+
+
+
+
+$(function () {
+init();
 
 })
