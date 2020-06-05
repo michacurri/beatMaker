@@ -269,6 +269,13 @@ a {
   width: 100%;
 }
 
+.flexColumn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .alignCenter {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -293,47 +300,93 @@ a {
   background-color: #303030;
   border-radius: 7px 7px;
   padding: 2%;
-  -ms-grid-columns: 1fr 4fr 1fr;
-      grid-template-columns: 1fr 4fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  -ms-grid-rows: 0.2fr 1fr;
+      grid-template-rows: 0.2fr 1fr;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.machine .topLeft {
+  -ms-grid-column: 1;
+  grid-column: 1 / 1;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+  margin: 1rem;
+  color: teal;
+}
+
+.machine .topCenter {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+}
+
+.machine .topRight {
+  grid-column: 5 / -1;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
 }
 
 .machine .control {
-  border-radius: 10px 10px 0 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
-.machine .control .panelLeft {
-  margin: 2vw;
+.machine .panelLeft {
+  margin: 1vw;
   -ms-grid-column: 1;
   grid-column: 1 / 1;
-  grid-row: 1 / -1;
+  -ms-grid-row: 2;
+  grid-row: 2 / 2;
 }
 
-.machine .control .panelRight {
-  margin: 2vw;
+.machine .panelRight {
+  margin: 1vw;
   grid-column: 5 / -1;
-  grid-row: 1 / -1;
+  -ms-grid-row: 2;
+  grid-row: 2 / 2;
 }
 
 .machine .switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 1rem;
-  margin-left: 3vw;
   border-radius: 10px;
-  height: 10vw;
-  width: 10vw;
+  height: 8vw;
+  width: 12vw;
+  margin: 1rem;
   border: 1px solid #00d9ff;
   background-color: black;
   color: #00d9ff;
   font-size: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.machine .beatGrid {
+.machine .switch p {
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+.beatGrid {
   grid-column: 2 / -2;
-  grid-row: 1 / -1;
+  grid-row: 2 / -1;
   border-radius: 0 0 10px 10px;
   background: #303030;
   -ms-grid-columns: (1fr)[4];
@@ -344,13 +397,7 @@ a {
   grid-row-gap: 1rem;
 }
 
-@media only screen and (min-width: 769px) {
-  .machine .beatGrid {
-    padding: 3%;
-  }
-}
-
-.pad {
+.beatGrid .pad {
   height: 15vw;
   width: 15vw;
   background: #eeaeca;
