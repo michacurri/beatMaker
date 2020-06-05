@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BeatMaker</title>
+  <title>BeatMaker Solo</title>
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
@@ -15,33 +15,34 @@
 <body>
   <main>
     <div class="wrapper">
-      <div class="machine">
-        <div class="controlPanel flex alignCenter">
-          <div class="powerSwitch flex centerCenter">POWER</div>
+      <div class="machine grid">
+        <div class="control panelLeft">
+          <div class="power switch">POWER</div>
         </div>
-        <ul class="beatGrid">
-          <li data-key="69" class="pad"></li>
-          <li data-key="82" class="pad"></li>
-          <li data-key="85" class="pad"></li>
-          <li data-key="73" class="pad"></li>
-          <li data-key="68" class="pad"></li>
-          <li data-key="70" class="pad"></li>
-          <li data-key="74" class="pad"></li>
-          <li data-key="75" class="pad"></li>
+        <div class="control panelRight">
+          <div class="record switch">Record</div>
+        </div>
+        <ul class="beatGrid grid">
+          <li id="p1" data-key="69" class="pad"><audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio></li>
+          <li id="p2" data-key="82" class="pad"><audio id="r" data-key="82" src="./assets/sounds/808/808-hi-hat-13.wav"></audio></li>
+          <li id="p3" data-key="85" class="pad"><audio id="u" data-key="85" src="./assets/sounds/808/808-hi-hat-fatTape-closed.wav"></audio></li>
+          <li id="p4" data-key="73" class="pad"><audio id="i" data-key="73" src="./assets/sounds/808/808-snare-2.wav"></audio></li>
+          <li id="p5" data-key="68" class="pad"><audio id="d" data-key="68" src="./assets/sounds/808/808-kick-1.wav"></audio></li>
+          <li id="p6" data-key="70" class="pad"><audio id="f" data-key="70" src="./assets/sounds/808/808-kick-2.wav"></audio></li>
+          <li id="p7" data-key="74" class="pad"><audio id="j" data-key="74" src="./assets/sounds/808/808-pitched-c-04.wav"></audio></li>
+          <li id="p8" data-key="75" class="pad"><audio id="k" data-key="75" src="./assets/sounds/808/808-snare-1.wav"></audio></li>
         </ul>
       </div>
     </div>
   </main>
-  <div class="files">
-    <audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio>
-    <audio id="r" data-key="82" src="./assets/sounds/808/808-hi-hat-13.wav"></audio>
-    <audio id="u" data-key="85" src="./assets/sounds/808/808-hi-hat-fatTape-closed.wav"></audio>
-    <audio id="i" data-key="73" src="./assets/sounds/808/808-snare-2.wav"></audio>
-    <audio id="d" data-key="68" src="./assets/sounds/808/808-kick-1.wav"></audio>
-    <audio id="f" data-key="70" src="./assets/sounds/808/808-kick-2.wav"></audio>
-    <audio id="j" data-key="74" src="./assets/sounds/808/808-pitched-c-04.wav"></audio>
-    <audio id="k" data-key="75" src="./assets/sounds/808/808-snare-1.wav"></audio>
-  </div>
+    
+    
+    
+    
+    
+    
+    
+
 
 
 

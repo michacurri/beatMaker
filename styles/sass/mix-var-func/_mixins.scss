@@ -39,6 +39,10 @@
   width: 100%;
 }
 
+@mixin grid {
+  display: grid;
+}
+
 @mixin rowReverse {
   flex-direction: row-reverse;
 }

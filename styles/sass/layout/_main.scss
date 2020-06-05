@@ -5,43 +5,57 @@
 
 
 .machine {
-  border: solid black 2px;
-  // background-color: #303030;
-  border-radius: 10px 10px;
-  margin: 5vw;
+  background-color: #303030;
+  border-radius: 7px 7px;
+  // margin: 2vw;
   padding: 2%;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr;
+  justify-self: center;
+  width: 100%;
 
-  .controlPanel {
-    height: 20rem;
-    width: 100%;
-    background-color: darkslategrey;
+  .control {
+    // height: 20vw;
+    // background-color: darkslategrey;
     border-radius: 10px 10px 0 0;
+
+    .panelLeft {
+      margin: 2vw;
+      grid-column: 1 / 1;
+      grid-row: 1 / -1;
+    }
+    
+    .panelRight {
+      margin: 2vw;
+      grid-column: 5 / -1;
+      grid-row: 1 / -1;
+    }
+
   }
 
-  .powerSwitch {
+  .switch {
     padding: 1rem;
-    margin-left: 5rem;
-    height: 10rem;
-    width: 10rem;
-    border: 1px solid rgb(0, 217, 255);  
-    background-color: black; 
-    color: rgb(0, 217, 255); 
+    margin-left: 3vw;
+    border-radius: 10px;  
+    height: 10vw;
+    width: 10vw;
+    border: 1px solid rgb(0, 217, 255);
+    background-color: black;
+    color: rgb(0, 217, 255);
     font-size: 2rem;
-
   }
 
 
   .beatGrid {
-    padding: 5%;
+    grid-column: 2 / -2;
+    grid-row: 1 / -1;
+    // padding: 5%;
     border-radius: 0 0 10px 10px;
-    display: grid;
-    align-items: center;
-    justify-items: center;
     background: #303030;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
 
     @include mediaQ(tablet) {
       padding: 3%;
@@ -50,13 +64,9 @@
 }
 
 
-// .pad::before {
-//   background: white;
-// }
-
 .pad {
-  height: 20rem;
-  width: 20rem;
+  height: 15vw;
+  width: 15vw;
   background: rgb(238, 174, 202);
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
   border-radius: 5%;
@@ -64,7 +74,53 @@
   box-shadow: (0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black);
   transition: all 100ms;
   position: relative;
+
 }
+
+#p1 {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+#p2 {
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+}
+
+#p3 {
+  grid-column: 3 / 3;
+  grid-row: 1 / 1;
+}
+
+#p4 {
+  grid-column: 4 / 4;
+  grid-row: 1 / 1;
+}
+
+#p5 {
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+}
+
+#p6 {
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+#p7 {
+  grid-column: 3 / 3;
+  grid-row: 2 / 2;
+}
+
+#p8 {
+  grid-column: 4 / 4;
+  grid-row: 2 / 2;
+}
+
+
+
+
+
 
 
 .padActive {
