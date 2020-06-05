@@ -8,6 +8,10 @@
   @include flex();
 }
 
+.flexColumn {
+  @include flexColumn();
+}
+
 .alignCenter {
   @include alignCenter();
 }
