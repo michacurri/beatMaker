@@ -397,8 +397,8 @@ main {
   display: flex;
   padding: 1vw;
   border-radius: 10px;
-  height: 8vw;
-  width: 8vw;
+  height: 9vw;
+  width: 9vw;
   margin: 1vw;
   border: 1px solid #00d9ff;
   background-color: black;
@@ -414,7 +414,7 @@ main {
 }
 
 .machine .switch p {
-  font-size: 1vw;
+  font-size: 1.8vw;
   text-transform: uppercase;
 }
 
