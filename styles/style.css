@@ -296,10 +296,14 @@ h1 {
           align-items: center;
 }
 
+body {
+  height: 100vh;
+}
+
 main {
   background-color: #66666E;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
 }
 
 .wrapper {
@@ -339,7 +343,33 @@ main {
   grid-row-gap: 0.5vw;
 }
 
-.machine .topLeft {
+.help {
+  background: #070B0D;
+  color: #DCE1E9;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 10%;
+  z-index: -10;
+  visibility: hidden;
+}
+
+.help #closeHelpBtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.openHelp {
+  z-index: 10;
+  visibility: visible;
+}
+
+.topLeft {
   -ms-grid-column: 1;
   grid-column: 1 / 1;
   -ms-grid-row: 1;
@@ -350,7 +380,7 @@ main {
           align-items: center;
 }
 
-.machine .topCenter {
+.topCenter {
   grid-column: 2 / -2;
   -ms-grid-row: 1;
   grid-row: 1 / 1;
@@ -359,7 +389,7 @@ main {
           align-items: center;
 }
 
-.machine .topRight {
+.topRight {
   grid-column: 6 / -1;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -368,7 +398,7 @@ main {
           align-items: center;
 }
 
-.machine .control {
+.control {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -378,20 +408,20 @@ main {
   height: 100%;
 }
 
-.machine .panelLeft {
+.panelLeft {
   margin: 1vw;
   -ms-grid-column: 1;
   grid-column: 1 / 1;
   grid-row: 2 / -2;
 }
 
-.machine .panelRight {
+.panelRight {
   margin: 1vw;
   grid-column: 6 / -1;
   grid-row: 2 / -2;
 }
 
-.machine .switch {
+.switch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,9 +430,10 @@ main {
   height: 9vw;
   width: 9vw;
   margin: 1vw;
-  border: 1px solid #00d9ff;
+  border: 1px solid black;
   background-color: black;
-  color: #00d9ff;
+  color: black;
+  cursor: pointer;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -413,7 +444,7 @@ main {
           box-shadow: 0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
 }
 
-.machine .switch p {
+.switch p {
   font-size: 1.8vw;
   text-transform: uppercase;
 }
@@ -421,8 +452,6 @@ main {
 .pad {
   height: 12vw;
   width: 12vw;
-  background: #eeaeca;
-  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
   border-radius: 5%;
   -webkit-box-shadow: 0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
           box-shadow: 0 2px 1px 2px black, inset 0px 1px 1px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
@@ -500,6 +529,17 @@ main {
   grid-column: 5 / 6;
   -ms-grid-row: 3;
   grid-row: 3;
+}
+
+.switchOn,
+#power {
+  border: 1px solid #00d9ff;
+  color: #00d9ff;
+}
+
+.padOn {
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
 }
 
 .padActive {
