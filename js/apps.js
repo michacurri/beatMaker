@@ -52,27 +52,67 @@ function clickFunction(e) {
   removeClass(clickPad);
 };
 
+function keyFunction(e) {
+  //which key has been hit
+  const keyCode = e.which;
+  //find the corresponding audio file linked to the keydown 
+  const audio = $(`audio[data-key="${keyCode}"]`);
+  //pad also labeled with keyCode, find the correct pad and activate
+  const pad = $(`.pad[data-key="${keyCode}"]`);
+
+  // create if keys are data-keys from this array, playAudio(), else
+  playAudio(audio);
+  addClass(pad);
+  removeClass(pad); 
+}
+
 function playAudio(audio) {
   if (!audio) return;
   audio.get(0).currentTime = 0;
   audio.get(0).play();
 };
 
-function addClass(pad) {
-  pad.addClass('padActive');
+function addClass(onPad) {
+  onPad.addClass('padActive');
 };
 
-function removeClass(pad) {
-  $.each(pads, (index, pad) => {
-    $(pad).on('transitionend', function () {
-      $(pad).removeClass('padActive');
+function removeClass() {
+  $.each(pads, (index, offPad) => {
+    $(offPad).on('transitionend', function () {
+      $(offPad).removeClass('padActive');
     });
   });
 };
 
+function openHelp() {
+  $('#openHelpBtn').on('click', function() {
+    $('.help').addClass('openHelp');
+  });
+};
+
+function closeHelp() {
+  $('#closeHelpBtn').on('click', function() {
+    $('.help').removeClass('openHelp');
+  });
+};
+
+
+
 
 // INITIALIZE
 function init() {
+
+  // flash the border of the power button to signify it needs to be turned on
+  $('#power').on('click', function () {
+    $('.switch').toggleClass('switchOn');
+    $('.pad').toggleClass('padOn');
+
+  })
+  // once pressed, state of machine (pads, other buttons) will light up
+
+  // instructions pop up
+
+
 
   // on click (mobile or mouse experience)
   $('.pad').on('click', function (e) {
@@ -82,20 +122,12 @@ function init() {
   })
 
   $('body').on('keydown', function (e) {
-    //which key has been hit
-    const keyCode = e.which;
-    //find the corresponding audio file and link it with the pad 
-    const audio = $(`audio[data-key="${keyCode}"]`);
-    const pad = $(`.pad[data-key="${keyCode}"]`);
-    //if no audio file attached to keyCode return false
-    playAudio(audio);
-    addClass(pad);
-    removeClass(pad);
+    keyFunction(e);
   })
 
 }
 
 
 $(function () {
-init();
+  init();
 })

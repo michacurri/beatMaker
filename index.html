@@ -17,7 +17,16 @@
     <div class="wrapper grid">
       <div class="machineContainer grid">
         <div class="machine grid">
-
+          <div class="help">
+            <button id="closeHelpBtn" data-key="72" class="switch" onclick="closeHelp()">X</button>
+            <h2>BeatMaker Solo // Instructions</h2>
+            <h3>Step 1</h3>
+            <p>Push Power to turn the machine on and off</p>
+            <h3>Step 2</h3>
+            <p>For the best experience use a mobile device or keyboard</p>
+            <p>Top Row: E, R, U, I</p>
+            <p>Bottom Row: D, F, J, K</p>
+          </div>
           <div class="topLeft">
             <h1>BeatMaker Solo</h1>
           </div>
@@ -28,20 +37,13 @@
             <h2>topRight</h2>
           </div>
            <div class="control panelLeft flex flexColumn">
-            <div class="power switch">
-              <p>power</p>
-            </div>
-            <div class="record switch">
-              <p>record</p>
-            </div>
+            <button id="power" data-key="80" class="switch"><p>power</p></button>
+            <button id="openHelpBtn" data-key="72" class="switch" onclick="openHelp()"><p>help</p></button>
+            <button id="record" data-key="32" class="switch"><p>record</p></button>
           </div>
           <div class="control panelRight flex flexColumn">
-            <div class="bpm switch">
-              <p>bpm</p>
-            </div>
-            <div class="sound switch">
-              <p>sound</p>
-            </div>
+            <button id="bpm" data-key="66" class="switch"><p>bpm</p></button>
+            <button id="sound" data-key="83" class="switch"><p>sound</p></button>
           </div>
           <!-- <ul class="beatGrid grid"> -->
           <div id="p1" data-key="69" class="pad"><audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio></div>
