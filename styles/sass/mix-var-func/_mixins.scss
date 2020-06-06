@@ -1,8 +1,10 @@
 // media queries
 
 @mixin mediaQ($media) {
-  @if $media == mobile {
-    @media only screen and (max-width: 768px) { @content; }
+  @if $media == tiny {
+    @media only screen and (min-width: 350px) { @content; }
+  } @else if $media == mobile {
+    @media only screen and (min-width: 768px) { @content; } 
   } @else if $media == tablet {
     @media only screen and (min-width: 769px) { @content; }
   } @else if $media == fullscreen {
@@ -36,7 +38,7 @@
 @mixin flex {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  // width: 100%;
 }
 
 @mixin grid {
