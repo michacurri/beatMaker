@@ -97,18 +97,6 @@ function removeClass() {
   });
 };
 
-// instructions: open and close window
-function openHelp() {
-  $('#openHelpBtn').on('click', function () {
-    $('.help').addClass('openHelp');
-  });
-};
-
-function closeHelp() {
-  $('#closeHelpBtn').on('click', function () {
-    $('.help').removeClass('openHelp');
-  });
-};
 
 // lights on
 function powerOn() {
@@ -124,6 +112,14 @@ function init() {
   // power button only visible object to signify it needs to be turned pushed
   $('#power').on('click', function () {
     powerOn();
+  });
+
+  $('#openHelpBtn').on('click', function () {
+    $('.help').addClass('openHelp');
+  });
+
+  $('#closeHelpBtn').on('click', function () {
+    $('.help').removeClass('openHelp');
   });
 
   // functionality for click (mobile or mouse experience)
