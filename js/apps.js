@@ -1,15 +1,40 @@
+// use userRecord array
+// playback based on keyPressed and time between each timeStamp
+
+// reproduce array with keyCode and difference in timeStamp
+// maybe use a namespace to complete this
+
+const playBack = {};
+// playBack.playSaved = [];
+
+
 // global variables
 const userRecord = [];
 const pads = $('.pad');
-// const audioKeyCodes = [69,82,85,73,68,70,74,75]
-
 const getTimeStamp = ((keyCode, timeStamp) => {
-  console.log(`${keyCode} and ${timeStamp}`)
   userRecord.push({
     keyCode,
     timeStamp
   });
+  
 });
+
+// const audioKeyCodes = [69,82,85,73,68,70,74,75]
+
+
+// const playSaved = $.map(userRecord, function(timeStamp, index) {
+//    console.log(`${timeStamp}${index}`);
+   
+//  })
+
+  // function playSaved(object, index) {
+  //   userRecord.map((object, index) => {
+  //     console.log(`${object}${index}`);
+      
+  //   });
+    
+  // }
+
 
 // FUNCTIONS
 function clickFunction(e) {
@@ -35,16 +60,14 @@ function keyFunction(e) {
   addClass(pad);
   removeClass(pad);
   getTimeStamp(keyCode, timeStamp)
-}
+};
 
-
-// to play audio files and to allow repeated key presses at user discretion
 function playAudio(audio) {
   // to do: create "if pressed keys are data-keys from this array", playAudio(), else
   // ... to allow other keys to be bound (record, bpm, sound, help)
   if (!audio) return;
   audio.get(0).currentTime = 0;
-  audio.get(0).play();
+  audio.get(0).play(); // thanks to this blog on why "play()" in jQuery requires the use of a (0) (https://exceptionshub.com/play-an-audio-file-using-jquery-when-a-button-is-clicked-2.html)
 };
 
 // change styling effects for pad interaction
@@ -86,11 +109,9 @@ function init() {
   })
 
   // functionality for click (mobile or mouse experience)
-
   $('.pad').on('click', function (e) {
     clickFunction(e);
   })
-
 
   // functionality for keyboard interaction
   $('body').on('keydown', function (e) {
@@ -98,6 +119,7 @@ function init() {
   })
 }
 
+// credit to sources
 // ** some functionality designed around a javascript drum machine created by Wes Bos: https://www.youtube.com/watch?v=VuN8qwZoego
 
 $(function () {

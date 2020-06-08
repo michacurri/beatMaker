@@ -120,6 +120,10 @@ main {
     font-size: 1.8vw;
     text-transform: uppercase;
   }
+
+  &:focus {
+    border: 2px white solid;
+  }
 }
 
 .pad {
@@ -134,6 +138,10 @@ main {
     // above 350px viewport increase pad size 
     height: 15vw;
     width: 15vw;
+  }
+
+  &:focus {
+    border: 2px white solid;
   }
 }
 
