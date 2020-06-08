@@ -19,6 +19,18 @@ const getTimeStamp = ((keyCode, timeStamp) => {
   
 });
 
+
+// sound array 
+// const soundObject = {
+//   keyCode: {
+//     69: ['src="./assets/sounds/808/808-crash-1.wav"',]
+//     },
+//     82: ['src="./assets/sounds/808/808-hi-hat-13.wav"']
+//   }
+
+
+
+
 // const audioKeyCodes = [69,82,85,73,68,70,74,75]
 
 
@@ -98,25 +110,31 @@ function closeHelp() {
   });
 };
 
+// lights on
+function powerOn() {
+  $('.switch').toggleClass('switchOn');
+  $('.pad').toggleClass('padOn');
+  $('h1').toggleClass('titleOn');
+}
+
 
 // INITIALIZE
 function init() {
 
   // power button only visible object to signify it needs to be turned pushed
   $('#power').on('click', function () {
-    $('.switch').toggleClass('switchOn');
-    $('.pad').toggleClass('padOn');
-  })
+    powerOn();
+  });
 
   // functionality for click (mobile or mouse experience)
   $('.pad').on('click', function (e) {
     clickFunction(e);
-  })
+  });
 
   // functionality for keyboard interaction
   $('body').on('keydown', function (e) {
     keyFunction(e);
-  })
+  });
 }
 
 // credit to sources

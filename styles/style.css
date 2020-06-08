@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Monoton&family=Oxanium:wght@500&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -254,9 +255,27 @@ a {
 }
 
 h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 4vw;
+}
+
+h2 {
+  font-family: 'Monoton', cursive;
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: 5vw;
+  color: #5CD3FF;
+}
+
+h3 {
+  font-family: 'Oxanium', cursive;
   font-size: 2vw;
   color: #5CD3FF;
-  inset: rgba(0, 0, 0, 0.5) -1px 0, rgba(0, 0, 0, 0.3) 0 -1px, rgba(255, 255, 255, 0.5) 0 1px, rgba(0, 0, 0, 0.3) -1px -2px;
+}
+
+p {
+  font-family: 'Audiowide', cursive;
+  font-size: 1.8vw;
 }
 
 .grid {
@@ -297,7 +316,7 @@ h1 {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 main {
@@ -321,6 +340,12 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+h1 {
+  color: black;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
 .machine {
@@ -353,7 +378,7 @@ main {
   right: 0;
   top: 0;
   bottom: 0;
-  padding: 10%;
+  padding: 5%;
   z-index: -10;
   visibility: hidden;
 }
@@ -362,6 +387,14 @@ main {
   position: fixed;
   top: 0;
   right: 0;
+}
+
+.help p {
+  margin-bottom: 2vw;
+}
+
+.help p span {
+  color: #5CD3FF;
 }
 
 .openHelp {
@@ -381,12 +414,17 @@ main {
 }
 
 .topCenter {
+  display: -ms-grid;
+  display: grid;
   grid-column: 2 / -2;
   -ms-grid-row: 1;
   grid-row: 1 / 1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .topRight {
@@ -442,6 +480,8 @@ main {
           align-items: center;
   -webkit-box-shadow: 0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
           box-shadow: 0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
 .switch p {
@@ -469,10 +509,6 @@ main {
     height: 15vw;
     width: 15vw;
   }
-}
-
-.pad:focus {
-  border: 2px white solid;
 }
 
 #p1 {
@@ -542,6 +578,15 @@ main {
 .switchOn,
 #power {
   border: 1px solid #00d9ff;
+  color: #00d9ff;
+}
+
+.switchOn:focus,
+#power:focus {
+  border: 2px white solid;
+}
+
+.titleOn {
   color: #00d9ff;
 }
 
