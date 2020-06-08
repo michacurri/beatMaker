@@ -449,6 +449,10 @@ main {
   text-transform: uppercase;
 }
 
+.switch:focus {
+  border: 2px white solid;
+}
+
 .pad {
   height: 12vw;
   width: 12vw;
@@ -465,6 +469,10 @@ main {
     height: 15vw;
     width: 15vw;
   }
+}
+
+.pad:focus {
+  border: 2px white solid;
 }
 
 #p1 {

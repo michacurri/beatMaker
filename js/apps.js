@@ -1,81 +1,82 @@
-// beatMaker
+// use userRecord array
+// playback based on keyPressed and time between each timeStamp
 
-// playable on keyboard using data-key keybindings: LeftHand [E,R,D,F] and RightHand [U,I,J,K].
-// or on mobile using thumbs 
+// reproduce array with keyCode and difference in timeStamp
+// maybe use a namespace to complete this
 
-// jQuery will use on clicks, or keydown, event listeners for user interaction.
+const playBack = {};
+// playBack.playSaved = [];
 
-// sounds will be provided either in an assets folder and initiated using the <audio> tag and JQuery .keydown(Handler)
-// or be integrated using a library such as Howler API.
-
-// each pad will (for MVP) be linked to a single sound.
-
-
-// ** STRETCH TARGET ** //
-
-// Stretch target will allow users to record for a period of time and layer their sounds via a loop
-// the MediaRecorder API may be used in this feature and information stored in an object array using separate variables. 
-// Set Timeout, Set Interval API's may be used to store timing information.
-
-
-
-//// my code
 
 // global variables
-
 const userRecord = [];
 const pads = $('.pad');
+const getTimeStamp = ((keyCode, timeStamp) => {
+  userRecord.push({
+    keyCode,
+    timeStamp
+  });
+  
+});
 
-///////////// do not delete
+// const audioKeyCodes = [69,82,85,73,68,70,74,75]
 
-// record each keydown and put the keyCode into userRecord Array
-// record time of each keydown with event.timeStamp
 
-// const timeStamp = event.timeStamp;
-// userRecord.push({
-//   keyCode,
-//   timeStamp
-// });
+// const playSaved = $.map(userRecord, function(timeStamp, index) {
+//    console.log(`${timeStamp}${index}`);
+   
+//  })
 
-// find the time difference between
-
-////////////////// do not delete
+  // function playSaved(object, index) {
+  //   userRecord.map((object, index) => {
+  //     console.log(`${object}${index}`);
+      
+  //   });
+    
+  // }
 
 
 // FUNCTIONS
 function clickFunction(e) {
-  const dataKey = e.currentTarget.attributes["data-key"];
-  const clickAudio = $(`audio[data-key="${dataKey.nodeValue}"]`);
-  const clickPad = $(`.pad[data-key="${dataKey.nodeValue}"]`);
-  playAudio(clickAudio);
-  addClass(clickPad);
-  removeClass(clickPad);
+  const timeStamp = e.timeStamp;
+  const keyCode = e.currentTarget.attributes["data-key"].value;
+  const audio = $(`audio[data-key="${keyCode}"]`);
+  const pad = $(`.pad[data-key="${keyCode}"]`);
+  playAudio(audio);
+  addClass(pad);
+  removeClass(pad);
+  getTimeStamp(keyCode, timeStamp);
 };
 
 function keyFunction(e) {
+  const timeStamp = e.timeStamp;
   //which key has been hit
   const keyCode = e.which;
   //find the corresponding audio file linked to the keydown 
   const audio = $(`audio[data-key="${keyCode}"]`);
   //pad also labeled with keyCode, find the correct pad and activate
   const pad = $(`.pad[data-key="${keyCode}"]`);
-
-  // create if keys are data-keys from this array, playAudio(), else
   playAudio(audio);
   addClass(pad);
-  removeClass(pad); 
-}
-
-function playAudio(audio) {
-  if (!audio) return;
-  audio.get(0).currentTime = 0;
-  audio.get(0).play();
+  removeClass(pad);
+  getTimeStamp(keyCode, timeStamp)
 };
 
+function playAudio(audio) {
+  // to do: create "if pressed keys are data-keys from this array", playAudio(), else
+  // ... to allow other keys to be bound (record, bpm, sound, help)
+  if (!audio) return;
+  audio.get(0).currentTime = 0;
+  audio.get(0).play(); // thanks to this blog on why "play()" in jQuery requires the use of a (0) (https://exceptionshub.com/play-an-audio-file-using-jquery-when-a-button-is-clicked-2.html)
+};
+
+// change styling effects for pad interaction
 function addClass(onPad) {
   onPad.addClass('padActive');
 };
 
+// to remove the above mentioned styling after the CSS transition has ended
+// thank you to Talia for the help with my $.each loop on transitionend
 function removeClass() {
   $.each(pads, (index, offPad) => {
     $(offPad).on('transitionend', function () {
@@ -84,49 +85,42 @@ function removeClass() {
   });
 };
 
+// instructions: open and close window
 function openHelp() {
-  $('#openHelpBtn').on('click', function() {
+  $('#openHelpBtn').on('click', function () {
     $('.help').addClass('openHelp');
   });
 };
 
 function closeHelp() {
-  $('#closeHelpBtn').on('click', function() {
+  $('#closeHelpBtn').on('click', function () {
     $('.help').removeClass('openHelp');
   });
 };
 
 
-
-
 // INITIALIZE
 function init() {
 
-  // flash the border of the power button to signify it needs to be turned on
+  // power button only visible object to signify it needs to be turned pushed
   $('#power').on('click', function () {
     $('.switch').toggleClass('switchOn');
     $('.pad').toggleClass('padOn');
-
   })
-  // once pressed, state of machine (pads, other buttons) will light up
 
-  // instructions pop up
-
-
-
-  // on click (mobile or mouse experience)
+  // functionality for click (mobile or mouse experience)
   $('.pad').on('click', function (e) {
     clickFunction(e);
-    console.log();
-
   })
 
+  // functionality for keyboard interaction
   $('body').on('keydown', function (e) {
     keyFunction(e);
   })
-
 }
 
+// credit to sources
+// ** some functionality designed around a javascript drum machine created by Wes Bos: https://www.youtube.com/watch?v=VuN8qwZoego
 
 $(function () {
   init();
