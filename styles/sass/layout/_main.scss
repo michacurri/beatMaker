@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 main {
@@ -17,6 +17,11 @@ main {
 
 .machineContainer {
   align-items: center;
+}
+
+h1 {
+  color: black;
+  transition: all 700ms;
 }
 
 .machine {
@@ -45,17 +50,25 @@ main {
   right: 0;
   top: 0;
   bottom: 0;
-
-  padding: 10%;
-
+  padding: 5%;
   z-index: -10;
   visibility: hidden;
-
+  
   #closeHelpBtn {
     position: fixed;
     top: 0;
     right: 0;
   }
+
+  p {
+    margin-bottom: 2vw;
+
+    span {
+      color: #5CD3FF; 
+    }
+  }
+
+ 
 }
 
 .openHelp {
@@ -72,9 +85,12 @@ main {
 }
 
 .topCenter {
+  display: grid;
   grid-column: 2 / -2;
   grid-row: 1 / 1;
   align-items: center;
+  justify-content: center;
+
 }
 
 .topRight {
@@ -115,6 +131,7 @@ main {
   justify-content: center;
   align-items: center;
   box-shadow: (0 0 0 1px black, inset 0px 0 1px rgba(0, 0, 0, 0.7), inset 0 0 1px rgba(0, 0, 0, 0.9), 0 0 0 black);
+  transition: all 700ms;
 
   p {
     font-size: 1.8vw;
@@ -138,10 +155,6 @@ main {
     // above 350px viewport increase pad size 
     height: 15vw;
     width: 15vw;
-  }
-
-  &:focus {
-    border: 2px white solid;
   }
 }
 
@@ -191,6 +204,14 @@ main {
 .switchOn,
 #power {
   border: 1px solid rgb(0, 217, 255);
+  color: rgb(0, 217, 255);
+
+  &:focus {
+    border: 2px white solid;
+  } 
+}
+
+.titleOn {
   color: rgb(0, 217, 255);
 }
 
