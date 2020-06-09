@@ -259,6 +259,12 @@ h1 {
   font-size: 4vw;
 }
 
+@media only screen and (min-width: 1000px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+}
+
 h2 {
   font-family: 'Monoton', cursive;
   font-size: 3vw;
@@ -267,10 +273,23 @@ h2 {
   color: #5CD3FF;
 }
 
+@media only screen and (min-width: 1000px) {
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
 h3 {
   font-family: 'Oxanium', cursive;
   font-size: 2vw;
   color: #5CD3FF;
+}
+
+@media only screen and (min-width: 1000px) {
+  h3 {
+    font-size: 1.6rem;
+  }
 }
 
 p {
@@ -278,8 +297,13 @@ p {
   font-size: 1.8vw;
 }
 
+@media only screen and (min-width: 1000px) {
+  p {
+    font-size: 1.44rem;
+  }
+}
+
 .innerWrapper {
-  width: 90%;
   max-width: 1000px;
   height: 100%;
   margin: 0 auto;
@@ -343,6 +367,13 @@ body {
           align-items: center;
 }
 
+@media only screen and (min-width: 1000px) {
+  .machineContainer {
+    height: 100%;
+    max-width: 1000px;
+  }
+}
+
 h1 {
   color: black;
   -webkit-transition: all 700ms;
@@ -367,6 +398,13 @@ h1 {
       grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
   grid-column-gap: 0.5vw;
   grid-row-gap: 0.5vw;
+}
+
+@media only screen and (min-width: 1000px) {
+  .machine {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .help {
@@ -402,6 +440,13 @@ h1 {
 
 .help p span {
   color: #5CD3FF;
+}
+
+@media only screen and (min-width: 1000px) {
+  .help p {
+    font-size: 1.44rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .openHelp {
@@ -496,8 +541,21 @@ h1 {
   text-transform: uppercase;
 }
 
+@media only screen and (min-width: 1000px) {
+  .switch p {
+    font-size: 1.44rem;
+  }
+}
+
 .switch:focus {
   border: 2px white solid;
+}
+
+@media only screen and (min-width: 1000px) {
+  .switch {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .pad {
@@ -515,6 +573,13 @@ h1 {
   .pad {
     height: 15vw;
     width: 15vw;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .pad {
+    height: 130px;
+    width: 130px;
   }
 }
 
