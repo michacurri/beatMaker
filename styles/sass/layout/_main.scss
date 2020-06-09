@@ -11,6 +11,11 @@ body {
 
 .machineContainer {
   align-items: center;
+
+  @include mediaQ(fullscreen) {
+    height: 100%;
+    max-width: 1000px;
+  }
 }
 
 h1 {
@@ -31,6 +36,11 @@ h1 {
   grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
   grid-column-gap: 0.5vw;
   grid-row-gap: 0.5vw;
+
+  @include mediaQ(fullscreen) {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .help {
@@ -64,6 +74,11 @@ h1 {
 
     span {
       color: #5CD3FF;
+    }
+
+    @include mediaQ(fullscreen) {
+      font-size: createREM($bodyFontSize);
+      margin-bottom: 1rem;
     }
   }
 }
@@ -131,10 +146,19 @@ h1 {
   p {
     font-size: 1.8vw;
     text-transform: uppercase;
+
+    @include mediaQ(fullscreen) {
+      font-size: createREM($bodyFontSize);
+    }
   }
 
   &:focus {
     border: 2px white solid;
+  }
+
+  @include mediaQ(fullscreen) {
+    height: 80px;
+    width: 80px;
   }
 }
 
@@ -150,6 +174,11 @@ h1 {
     // above 350px viewport increase pad size 
     height: 15vw;
     width: 15vw;
+  }
+
+  @include mediaQ(fullscreen) {
+    height: 130px;
+    width: 130px;
   }
 }
 
@@ -216,7 +245,7 @@ h1 {
 .proOn {
   color: #F9C22E;
   cursor: none;
-  }
+}
 
 .padActive {
   top: 2px;
