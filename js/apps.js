@@ -21,31 +21,27 @@ const getTimeStamp = ((keyCode, timeStamp) => {
 
 
 // sound array 
-// const soundObject = {
-//   keyCode: {
-//     69: ['src="./assets/sounds/808/808-crash-1.wav"',]
-//     },
-//     82: ['src="./assets/sounds/808/808-hi-hat-13.wav"']
-//   }
+const soundObject = {
+  keyCode: {
+    69: []
+    },
+    82: []
+  }
 
 
 
-
-// const audioKeyCodes = [69,82,85,73,68,70,74,75]
-
-
-// const playSaved = $.map(userRecord, function(timeStamp, index) {
-//    console.log(`${timeStamp}${index}`);
+const playSaved = $.map(userRecord, function(timeStamp, index) {
+   console.log(`${timeStamp}${index}`);
    
-//  })
+ })
 
-  // function playSaved(object, index) {
-  //   userRecord.map((object, index) => {
-  //     console.log(`${object}${index}`);
+  function playSaved(object, index) {
+    userRecord.map((object, index) => {
+      console.log(`${object}${index}`);
       
-  //   });
+    });
     
-  // }
+  }
 
 
 // FUNCTIONS
@@ -103,8 +99,8 @@ function powerOn() {
   $('.switch').toggleClass('switchOn');
   $('.pad').toggleClass('padOn');
   $('h1').toggleClass('titleOn');
+  $('.pro').toggleClass('proOn');
 }
-
 
 // INITIALIZE
 function init() {
@@ -114,6 +110,7 @@ function init() {
     powerOn();
   });
 
+  // initialize and close Help
   $('#openHelpBtn').on('click', function () {
     $('.help').addClass('openHelp');
   });

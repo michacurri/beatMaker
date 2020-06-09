@@ -278,6 +278,13 @@ p {
   font-size: 1.8vw;
 }
 
+.innerWrapper {
+  width: 90%;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
 .grid {
   display: -ms-grid;
   display: grid;
@@ -317,16 +324,10 @@ p {
 
 body {
   height: 100%;
-}
-
-main {
   background-color: #66666E;
-  width: 100vw;
-  height: 100%;
 }
 
 .wrapper {
-  max-width: 1200px;
   margin: 0 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -389,8 +390,14 @@ h1 {
   right: 0;
 }
 
+.help #closeHelpBtn p {
+  font-size: 3vw;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .help p {
-  margin-bottom: 2vw;
+  margin-bottom: 1.5vw;
 }
 
 .help p span {
@@ -593,6 +600,11 @@ h1 {
 .padOn {
   background: #eeaeca;
   background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+}
+
+.proOn {
+  color: #F9C22E;
+  cursor: none;
 }
 
 .padActive {
