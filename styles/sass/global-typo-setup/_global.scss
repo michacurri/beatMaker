@@ -1,4 +1,6 @@
-
+.innerWrapper {
+  @include innerWrapper();
+}
 
 .grid {
   @include grid();

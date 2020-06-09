@@ -14,7 +14,7 @@
 
 <body>
   <main class="grid">
-    <div class="wrapper grid">
+    <div class="innerWrapper wrapper grid">
       <div class="machineContainer grid">
         <div class="machine grid">
           <div class="help">
@@ -26,8 +26,12 @@
             <p>For Top Row Pads, press: <span>E - R - U - I</span></p>
             <p>For Bottom Row Pads, press: <span>D - F - J - K</span></p>
             <h3>Step Three</h3>
+            <p>Pro-Version features available for purchase</p>
+            <h3>Step Four</h3>
             <p>Have fun!</p>
-            <button id="closeHelpBtn" data-key="72" class="switch" aria-label="Close" tabindex="3">X</button>
+            <button id="closeHelpBtn" data-key="72" class="switch" aria-label="Close" tabindex="3">
+              <p>X</p>
+            </button>
           </div>
           <div class="topLeft">
           </div>
@@ -36,37 +40,61 @@
           </div>
           <div class="topRight">
           </div>
-           <div class="control panelLeft flex flexColumn">
-            <button id="power" data-key="80" tabindex="1" class="switch"><p>power</p></button>
-            <button id="openHelpBtn" data-key="72" tabindex="2" class="switch"><p>help</p></button>
-            <button id="record" data-key="32" tabindex="4" class="switch"><p>record</p></button>
+          <div class="control panelLeft flex flexColumn">
+            <button id="power" data-key="80" tabindex="1" class="switch">
+              <p>power</p>
+            </button>
+            <button id="openHelpBtn" data-key="72" tabindex="2" class="switch">
+              <p>help</p>
+            </button>
           </div>
           <div class="control panelRight flex flexColumn">
-            <button id="bpm" data-key="66" tabindex="5" class="switch"><p>bpm</p></button>
-            <button id="sound" data-key="83" tabindex="6" class="switch"><p>sound</p></button>
+            <button id="bpm" data-key="66" tabindex="4" class="switch pro">
+              <p>bpm (pro)</p>
+            </button>
+            <button id="sound" data-key="83" tabindex="5" class="switch pro">
+              <p>sound (pro)</p>
+            </button>
+            <button id="record" data-key="32" tabindex="6" class="switch pro">
+              <p>record (pro)</p>
+            </button>
           </div>
-          <div id="p1" data-key="69" class="pad"><audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio></div>
-          <div id="p2" data-key="82" class="pad"><audio id="r" data-key="82" src="./assets/sounds/808/808-hi-hat-13.wav"></audio></div>
-          <div id="p3" data-key="85" class="pad"><audio id="u" data-key="85" src="./assets/sounds/808/808-hi-hat-fatTape-closed.wav"></audio></div>
-          <div id="p4" data-key="73" class="pad"><audio id="i" data-key="73" src="./assets/sounds/808/808-snare-2.wav"></audio></div>
-          <div id="p5" data-key="68" class="pad"><audio id="d" data-key="68" src="./assets/sounds/808/808-kick-1.wav"></audio></div>
-          <div id="p6" data-key="70" class="pad"><audio id="f" data-key="70" src="./assets/sounds/808/808-kick-2.wav"></audio></div>
-          <div id="p7" data-key="74" class="pad"><audio id="j" data-key="74" src="./assets/sounds/808/808-pitched-c-04.wav"></audio></div>
-          <div id="p8" data-key="75" class="pad"><audio id="k" data-key="75" src="./assets/sounds/808/808-snare-1.wav"></audio></div>
+          <div id="p1" data-key="69" class="pad"></div>
+          <div id="p2" data-key="82" class="pad"></div>
+          <div id="p3" data-key="85" class="pad"></div>
+          <div id="p4" data-key="73" class="pad"></div>
+          <div id="p5" data-key="68" class="pad"></div>
+          <div id="p6" data-key="70" class="pad"></div>
+          <div id="p7" data-key="74" class="pad"></div>
+          <div id="p8" data-key="75" class="pad"></div>
         </div>
       </div>
     </div>
+    <div class="audioFiles">
+      <div class="808">
+        <!-- samples below courtesy of Joshua Lourenco: https://soundcloud.com/maxprowl -->
+        <audio id="e" data-key="69" src="./assets/sounds/808/808-crash-1.wav"></audio>
+        <audio id="r" data-key="82" src="./assets/sounds/808/808-hi-hat-13.wav"></audio>
+        <audio id="u" data-key="85" src="./assets/sounds/808/808-hi-hat-fatTape-closed.wav"></audio>
+        <audio id="i" data-key="73" src="./assets/sounds/808/808-snare-2.wav"></audio>
+        <audio id="d" data-key="68" src="./assets/sounds/808/808-kick-1.wav"></audio>
+        <audio id="f" data-key="70" src="./assets/sounds/808/808-kick-2.wav"></audio>
+        <audio id="j" data-key="74" src="./assets/sounds/808/808-pitched-c-04.wav"></audio>
+        <audio id="k" data-key="75" src="./assets/sounds/808/808-snare-1.wav"></audio>
+      </div>
+      <div class="african">
+        <!-- samples below sourced from: https://freeloopsdownload.com/african%20percussion%20samples.html -->
+        <audio id="e" data-key="69" src="./assets/sounds/african/African_Percussion_Samples_B_1.wav"></audio>
+        <audio id="r" data-key="82" src="./assets/sounds/african/African_Percussion_Samples_A_4.wav"></audio>
+        <audio id="u" data-key="85" src="./assets/sounds/african/African_Percussion_Samples_k_1.wav"></audio>
+        <audio id="i" data-key="73" src="./assets/sounds/african/African_Percussion_Samples_H_2.wav"></audio>
+        <audio id="d" data-key="68" src="./assets/sounds/african/African_Percussion_Samples_E_1.wav"></audio>
+        <audio id="f" data-key="70" src="./assets/sounds/african/African_Percussion_Samples_D_1.wav"></audio>
+        <audio id="j" data-key="74" src="./assets/sounds/african/African_Percussion_Samples_D_3.wav"></audio>
+        <audio id="k" data-key="75" src="./assets/sounds/african/African_Percussion_Samples_G_1.wav"></audio>
+      </div>
+    </div>
   </main>
-
-
-
-
-
-
-
-
-
-
 
   <script src='https://code.jquery.com/jquery-3.4.0.min.js'
     integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

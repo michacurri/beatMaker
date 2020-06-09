@@ -3,12 +3,12 @@
 
 h1 {
   font-family: 'Monoton', cursive;
-  font-size: 4vw;
+  font-size: createVW($h1FontSize);
 }
 
 h2 {
   font-family: 'Monoton', cursive;
-  font-size: 3vw;
+  font-size: createVW($h2FontSize);
   text-align: center;
   margin-bottom: 5vw;
   color: #5CD3FF; 
@@ -16,12 +16,12 @@ h2 {
 
 h3 {
   font-family: 'Oxanium', cursive;
-  font-size: 2vw;
+  font-size: createVW($h3FontSize);
   color: #5CD3FF; 
 }
 
 
 p {
   font-family: 'Audiowide', cursive;
-  font-size: 1.8vw;
+  font-size: createVW($bodyFontSize);
 }
